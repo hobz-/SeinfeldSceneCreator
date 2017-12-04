@@ -14,7 +14,7 @@ class GifSearch extends Component {
         gifs: []
       });
     } else {
-      axios.get(`http://api.giphy.com/v1/gifs/search?q=seinfeld+${value}&api_key=M7SyDjrFEu2jstmVhofA6xC7rjZi5hn3`)
+      axios.get(`https://api.giphy.com/v1/gifs/search?q=seinfeld+${value}&api_key=M7SyDjrFEu2jstmVhofA6xC7rjZi5hn3`)
       .then((gifResponse) => {
         this.setState({ gifs: gifResponse.data.data})
       })
