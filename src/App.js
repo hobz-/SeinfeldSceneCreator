@@ -58,7 +58,7 @@ class App extends Component {
   }
 
   subscribeToSocket(msg, cb) {
-    const socket = openSocket('http://seinfeld-gif-api.herokuapp.com');
+    const socket = openSocket('https://seinfeld-gif-api.herokuapp.com');
 
     socket.emit('message', msg);
     socket.on('urlReturn', function(data) {
@@ -71,7 +71,7 @@ class App extends Component {
     this.setState({finishedGifUrl: "", loading: true, gifError: false}); //
     this.subscribeToSocket('React Subscribing', (data) => this.setState({finishedGifUrl: data, loading: false}));
 
-    axios.post('http://seinfeld-gif-api.herokuapp.com/CreateScene', { images: this.state.selectedGifs, textArr: this.state.gifCaptions, gifError: false })
+    axios.post('https://seinfeld-gif-api.herokuapp.com/CreateScene', { images: this.state.selectedGifs, textArr: this.state.gifCaptions, gifError: false })
       .then((response) => {
         console.log(response);
       })
